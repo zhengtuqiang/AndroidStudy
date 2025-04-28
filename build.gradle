@@ -3,13 +3,24 @@ buildscript {
         maven {
             url = uri("$rootDir/repo")
         }
-        google()
+        // 添加 JitPack 仓库
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/central'
+        }
         mavenCentral()
         jcenter()
         maven {
             url 'https://maven.google.com/'
             name 'Google'
         }
+        google()
     }
     dependencies {
         //https://developer.android.com/studio/releases/gradle-plugin?hl=zh-cn
@@ -25,13 +36,24 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+        // 添加 JitPack 仓库
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/central'
+        }
         mavenCentral()
         jcenter()
         maven {
             url 'https://maven.google.com/'
             name 'Google'
         }
+        google()
     }
 
     tasks.withType(Javadoc) {
